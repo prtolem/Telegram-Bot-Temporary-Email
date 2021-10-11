@@ -16,12 +16,10 @@ class Mailbox:
 
         if mail_name == '':
             self._mailbox_ = self.rand_pass()
-            # print(f'use mailbox: {self._mailbox_}@1secmail.com')
         else:
-            self._mailbox_ = mail_name  # change to your own test mailbox
+            self._mailbox_ = mail_name
 
     def rand_pass(password=False):
-        """Generate a random password or random mail"""
 
         if password:
             special = string.punctuation
@@ -36,11 +34,6 @@ class Mailbox:
         return password
 
     def mailjobs(self, action, id=None):
-        """Main operation with 1secmail.com api:
-        'get' - get all mail in box
-        'read' - read message in box (need message id)
-        'del' - clear mailbox, all messages be removed!
-        """
 
         mail_list = 'error'
 
